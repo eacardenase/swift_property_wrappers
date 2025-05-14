@@ -16,7 +16,7 @@ import Foundation
             storage = newValue
         }
         get {
-            return max(min(storage, upperBound), 0)
+            return storage.clamped(to: 0...upperBound)
         }
     }
     
