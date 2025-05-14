@@ -13,8 +13,14 @@ import Foundation
     
     public var wrappedValue: Double {
         set {
-            storage = max(min(newValue, upperBound), 0)
+            storage = newValue
         }
+        get {
+            return max(min(storage, upperBound), 0)
+        }
+    }
+    
+    public var projectedValue: Double {
         get {
             return storage
         }
@@ -22,6 +28,6 @@ import Foundation
     
     public init(wrappedValue: Double, upperBound: Double = 1) {
         self.upperBound = upperBound
-        storage = max(min(wrappedValue, self.upperBound), 0)
+        storage = wrappedValue
     }
 }

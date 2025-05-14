@@ -8,16 +8,17 @@ struct Car {
 
 extension Car: CustomStringConvertible {
     var description: String {
-        "fuelLevel: \(fuelLevel), wrapped by \(_fuelLevel)"
+        "fuelLevel: \(fuelLevel), wrapped by \(_fuelLevel), projected: \($fuelLevel)"
     }
 }
 
 var myCar = Car()
-print(myCar)
-
 myCar.fuelLevel = 1.2
+
+print(myCar)
 
 print("Fuel:", myCar.fuelLevel)
 
 myCar.stereoVolume = 2.5
 print("Volume:", myCar.stereoVolume)
+print("Projected Volume:", myCar.$stereoVolume)
