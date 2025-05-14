@@ -7,11 +7,11 @@
 
 import Foundation
 
-@propertyWrapper public struct Percentage {
-    private var storage: Double
-    private var upperBound: Double
+@propertyWrapper public struct Percentage<T> where T: FloatingPoint {
+    private var storage: T
+    private var upperBound: T
     
-    public var wrappedValue: Double {
+    public var wrappedValue: T {
         set {
             storage = newValue
         }
@@ -20,13 +20,13 @@ import Foundation
         }
     }
     
-    public var projectedValue: Double {
+    public var projectedValue: T {
         get {
             return storage
         }
     }
     
-    public init(wrappedValue: Double, upperBound: Double = 1) {
+    public init(wrappedValue: T, upperBound: T = 1) {
         self.upperBound = upperBound
         storage = wrappedValue
     }

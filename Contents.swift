@@ -1,9 +1,9 @@
 import Cocoa
 
 struct Car {
-    @Percentage var fuelLevel: Double = 1.0
+    @Percentage var fuelLevel: Float = 1.0
     @Percentage var wiperFluidLevel: Double = 0.5
-    @Percentage(upperBound: 2.0) var stereoVolume: Double = 1.5
+    @Percentage(upperBound: 2.0) var stereoVolume: Float = 1.5
 }
 
 extension Car: CustomStringConvertible {
