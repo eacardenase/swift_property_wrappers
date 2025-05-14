@@ -6,7 +6,15 @@ struct Car {
     @Percentage(upperBound: 2.0) var stereoVolume: Double = 1.5
 }
 
+extension Car: CustomStringConvertible {
+    var description: String {
+        "fuelLevel: \(fuelLevel), wrapped by \(_fuelLevel)"
+    }
+}
+
 var myCar = Car()
+print(myCar)
+
 myCar.fuelLevel = 1.2
 
 print("Fuel:", myCar.fuelLevel)
