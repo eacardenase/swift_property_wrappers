@@ -1,10 +1,10 @@
 import Cocoa
 
 struct Car {
-    var fuelLevel: Double = 1.0
+    @Percentage var fuelLevel: Double = 1.0
 }
 
 var myCar = Car()
-myCar.fuelLevel = 1.1
+myCar.fuelLevel = 1.2
 
 print("Fuel:", myCar.fuelLevel)
